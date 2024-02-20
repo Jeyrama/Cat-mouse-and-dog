@@ -15,3 +15,6 @@ if j = 10:
 
 Finally, if not all three animals are present, return 'boring without all three'
 */
+
+
+// Solution
