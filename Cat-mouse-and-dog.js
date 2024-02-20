@@ -18,3 +18,22 @@ Finally, if not all three animals are present, return 'boring without all three'
 
 
 // Solution
+
+function catMouse(x, j){
+  let dLoc = x.indexOf('D');
+  let cLoc = x.indexOf('C');
+  let mLoc = x.indexOf('m');
+ 
+  //Check if all them are there
+  if (dLoc == -1 || cLoc == -1 || mLoc == -1) return 'boring without all three';
+
+  //Check if cat can jump far enough
+  if (Math.abs(cLoc - mLoc) <= j) {
+    //Check if dog is in the way
+    if (dLoc > cLoc && dLoc < mLoc && (cLoc+j) >= dLoc) {
+      return 'Protected!'
+    } else if (dLoc > mLoc && dLoc < cLoc && (cLoc-j) <= dLoc) {
+      return 'Protected!'
+    } else return 'Caught!'
+  } else return 'Escaped!'
+}
