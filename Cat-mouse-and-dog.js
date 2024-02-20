@@ -39,3 +39,18 @@ function catMouse(x, j){
 }
 
 // or
+
+const between = (x, a, b) => Math.min(a, b) < x && x < Math.max(a, b);
+
+function catMouse(x, j) {
+  let c = x.indexOf('C');
+  let m = x.indexOf('m');
+  let d = x.indexOf('D');
+  if (![c, m, d].every(i => i >= 0)) {
+    return 'boring without all three';
+  }
+  if (Math.abs(c - m) - 1 < j) {
+    return between(d, c, m) ? 'Protected!' : 'Caught!';
+  }
+  return 'Escaped!'
+}
