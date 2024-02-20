@@ -37,3 +37,5 @@ function catMouse(x, j){
     } else return 'Caught!'
   } else return 'Escaped!'
 }
+
+// or
